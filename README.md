@@ -6,7 +6,7 @@ En este documento se fijan estándares mínimos para la producción de código y
 ## Convenciones generales
 
 * El código y sus comentarios escrito en módulos, se escribe en **inglés**.
-* El README, los issues, los mensajes de los commits y la documentación en general, se escribe en **español**, a menos que el proyecto plantee una colaboración con desarrolladores de otros países no hispanoparlantes.
+* El README, los issues, los mensajes de los commits y la documentación en general, se escriben en **español**, a menos que el proyecto plantee una colaboración con desarrolladores no hispanoparlantes.
 * El caso de los *ipython notebooks* plantea un uso mixto del idioma, ya que reúne en un mismo documento código ejecutable y documentación. Debe preferirse el **inglés** para los bloques de código y el **español** para los bloques de documentación.
 * Los commits deben ser *chicos y fácilmente abordables por un tercero*. Debe buscarse avanzar en la producción de código de manera incremental, y realizar commits con avances mínimos que tengan una cierta unidad conceptual.
 * En proyectos con 2 o más personas, el código nuevo debe trabjarse en una *branch* separada e incluirse en una *pull request* para ser revisado por un tercero antes de su incorporación definitiva al *master branch*.
@@ -22,8 +22,8 @@ Algunos aspectos de la estructuración de un repositorio pueden cambiar dependie
 
 * **README**: Donde se listan:
     - El *objetivo* del proyecto
-    - Las instrucciones de *instalación*
     - Un *ejemplo rápido* de uso
+    - Las instrucciones de *instalación*
     - El resto de la documentación pertinente.
 
 * **Integración continua con Travis CI**: Travis CI controla luego de cada push al repositorio que el proyecto puede compilarse en un entorno Linux sin errores. Es esencial para asegurar que:
