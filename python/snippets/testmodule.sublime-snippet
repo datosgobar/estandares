@@ -1,0 +1,33 @@
+<snippet>
+    <content><![CDATA[
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""${1:$TM_FILENAME}
+
+Tests for `${1/test_//g}` module.
+"""
+
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import with_statement
+import unittest
+import nose
+
+
+class ${2:Name}TestCase(unittest.TestCase):
+	"""Tests for ${2} class."""
+
+    def test_${3:feature}(self):
+        ${4:pass}
+
+
+if __name__ == '__main__':
+    nose.run(defaultTest=__name__)
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>testmodule</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

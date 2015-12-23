@@ -1,0 +1,28 @@
+<snippet>
+    <content><![CDATA[
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""${1:One liner}
+
+${2:Description...}.
+"""
+
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import with_statement
+import os
+
+
+def main():
+    ${3:pass}
+
+if __name__ == '__main__':
+    main()
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pyscript</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
