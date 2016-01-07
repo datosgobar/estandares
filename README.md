@@ -66,6 +66,7 @@ Para agregar snippets:
     * [pyscript](python/snippets/pyscript.sublime-snippet): Tipear *pyscript*  para cargar un template de módulo nuevo en python.
     * [testmodule](python/snippets/testmodule.sublime-snippet): Tipear *testmodule* para cargar un template de módulo de testing en python.
     * [function](python/snippets/function.sublime-snippet): Tipear *function* para cargar un template de nuevo método con docstrings.
+    * [objfunction](python/snippets/objfunction.sublime-snippet): Tipear *objfunction* para cargar un template de nuevo método de un objeto con docstrings.
 
 Instalar paquetes estándares de snippets con el Package Control: **Sublime Text 3 Snippets** o **Sublime Text 2 Snippets**
 
