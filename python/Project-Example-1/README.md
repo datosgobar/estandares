@@ -1,8 +1,8 @@
 One liner que dice qué es el proyecto
 ===
 
-[![Coverage Status](https://coveralls.io/repos/abenassi/Project-Name/badge.svg?branch=master&service=github)](https://coveralls.io/github/abenassi/Project-Name?branch=master)
-[![Build Status](https://travis-ci.org/abenassi/Project-Name.svg)](https://travis-ci.org/abenassi/Project-Name)
+[![Coverage Status](https://coveralls.io/repos/abenassi/Project-Example-1/badge.svg?branch=master&service=github)](https://coveralls.io/github/abenassi/Project-Example-1?branch=master)
+[![Build Status](https://travis-ci.org/abenassi/Project-Example-1.svg)](https://travis-ci.org/abenassi/Project-Example-1)
 
 Acá se escribe un párrafo o dos que describan un poco más el proyecto. Debe ser breve pero lo suficientemente explicativo para que el usuario entienda para qué sirve este proyecto, qué tipo de data toma y qué tipo de output o aplicación genera.
 
