@@ -1,3 +1,4 @@
+
 One liner que dice qué es el proyecto
 ===
 
@@ -5,6 +6,18 @@ One liner que dice qué es el proyecto
 [![Build Status](https://travis-ci.org/abenassi/Project-Example-2.svg)](https://travis-ci.org/abenassi/Project-Example-2)
 
 Acá se escribe un párrafo o dos que describan un poco más el proyecto. Debe ser breve pero lo suficientemente explicativo para que el usuario entienda para qué sirve este proyecto, qué tipo de data toma y qué tipo de output o aplicación genera.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [One liner que dice qué es el proyecto](#one-liner-que-dice-qu%C3%A9-es-el-proyecto)
+  - [Ejemplo](#ejemplo)
+  - [Instalación](#instalaci%C3%B3n)
+  - [Tests](#tests)
+  - [Convenciones de estilo](#convenciones-de-estilo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Ejemplo
 

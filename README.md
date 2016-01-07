@@ -1,7 +1,27 @@
+
 # Style-Guide
 Guía de estilo y estructuración de proyectos para equipos de la SSIPyGA. 
 
 En este documento se fijan estándares mínimos para la producción de código y la gestión de proyectos de desarrollo. Se proveen templates y se sugieren herramientas adicionales para agilizar el trabajo bajo estos estándares.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Style-Guide](#style-guide)
+  - [Convenciones generales](#convenciones-generales)
+  - [Python](#python)
+    - [Guía de estilo: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)](#gu%C3%ADa-de-estilo-google-python-style-guidehttpsgooglegithubiostyleguidepyguidehtml)
+    - [Estructura de un proyecto en python](#estructura-de-un-proyecto-en-python)
+      - [Templates](#templates)
+      - [Convenciones](#convenciones)
+    - [Linters en Sublime Text](#linters-en-sublime-text)
+    - [Snippets en Sublime Text](#snippets-en-sublime-text)
+  - [Iniciar un nuevo proyecto](#iniciar-un-nuevo-proyecto)
+  - [JavaScript](#javascript)
+  - [HTML/CSS](#htmlcss)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Convenciones generales
 
