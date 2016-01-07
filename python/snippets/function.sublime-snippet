@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+def ${1:function}(${2:arg}):
+	"""${3:One liner}.
+
+	Args:
+		${2} (${4:arg_type}): ${5:arg_description}
+
+	Returns:
+		${6:return_type}: ${7:return_description}
+	"""
+	${8:pass}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>function</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+</snippet>
