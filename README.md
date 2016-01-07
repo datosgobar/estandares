@@ -19,12 +19,14 @@ En este documento se fijan estándares mínimos para la producción de código y
 
 ### Estructura de un proyecto en python
 
-*Templates*
+#### Templates
+
 * [Ejemplo 1: con tests junto a sus módulos](python/Project-Example-1)
 * [Ejemplo 2: con tests en una carpeta aparte](python/Project-Example-2)
 * [Ejemplo 3: con scrapy](https://github.com/ssipyga/contratos_argentina)
 * [Ejemplo 4: con django](https://github.com/chadad/propiedades)
 
+#### Convenciones
 
 * **requirements.txt**: todos los proyectos llevan un archivo *requirements.txt* en la root folder del proyecto. Este contiene la lista de dependencias utilizadas por los módulos del proyecto.
     - Si el proyecto incluye un *setup.py*, estas dependencias se instalarán al correr el comando `pip install -e .`
