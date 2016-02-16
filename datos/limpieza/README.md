@@ -29,7 +29,9 @@ En las siguientes subsecciones se estipulan procedimientos de limpieza estándar
 * Si no hay datos de hora o de día, se mantiene la primera parte del estándar
     - Ej.: **2016-02-05**
     - Ej.: **2016-02**
-* Tanto si los campos de "fecha" y "hora" están separados, como si ambos datos están en un mismo campo, serán eliminados y reemplazados por un campo nuevo siguiendo el estándar ISO 8601 y se nombrarán de la siguiente manera:
+* Si los campos de "fecha" y "hora" están separados, se mantienen los campos originales y se agrega el estandarizado.
+* Si se trata de un único campo, se elimina y se reemplaza por el campo estandarizado.
+* Los campos estandarizados se nombrarán de la siguiente manera:
     - *isodate_nombre_campo*: Para fechas sin hora.
     - *isodatetime_nombre_campo*: Para fechas que incluyen hora.
 * En el caso menos probable de que se disponga de una "hora" pero no de una "fecha", se convierte al formato **HH:MM:SS**. No es necesario cambiar el nombre del campo en este caso.
