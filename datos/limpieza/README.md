@@ -20,7 +20,7 @@ En las siguientes subsecciones se estipulan procedimientos de limpieza estándar
 
 ### Nombres de los campos
 
-* Los nombres de los campos deben renombrarse según la siguiente convención: palabras en minúsculas unidas por un guión bajo, utilizando únicamente caracteres ASCII (Ej.: *fecha_audiencia_solicitada*)
+* Los nombres de los campos deben renombrarse según la siguiente convención: palabras en minúsculas unidas por un guión bajo, utilizando únicamente caracteres ASCII **a-z** y **0-9** (Ej.: *fecha_audiencia_solicitada*)
 
 ### Fechas y horas
 
