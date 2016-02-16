@@ -1,4 +1,18 @@
-# Limpieza de Datos
+Limpieza de Datos
+===
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Estándares](#est%C3%A1ndares)
+  - [Nombres de los campos](#nombres-de-los-campos)
+  - [Fechas y horas](#fechas-y-horas)
+  - [Limpieza básica de strings](#limpieza-b%C3%A1sica-de-strings)
+  - [Limpieza avanzada de strings](#limpieza-avanzada-de-strings)
+- [Herramientas](#herramientas)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Estándares
 
@@ -30,7 +44,6 @@ Involucra tareas de limpieza locales, que no requieren de servicios externos al 
     - Split simple con OpenRefine: Se identifica el separador y se crean nuevos campos a partir de un split.
     - Expresiones Regulares o Parsing Expression Grammars. Si la expresión regular es sencilla, se puede hacer en OpenRefine. Si no lo es, o se vuelve conveniente usar PEGs, se escribe un módulo ad-hoc en python para estos casos.
 
-
 ### Limpieza avanzada de strings
 
 Involucra tareas de limpieza que requieren del uso de servicios externos al dataset o de los datos de otros datasets.
@@ -39,4 +52,6 @@ Involucra tareas de limpieza que requieren del uso de servicios externos al data
 * **Normalización de nombres de personas**: (TODO)
 * **Normalización de nombres de instituciones**: (TODO)
 
-    
+## Herramientas
+
+[TODO]
