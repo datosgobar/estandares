@@ -40,8 +40,9 @@ En las siguientes subsecciones se estipulan procedimientos de limpieza estándar
 
 Involucra tareas de limpieza locales, que no requieren de servicios externos al dataset ni uso de otros datasets.
 
-* **Nombres propios:** Incluyendo nombres de personas, direcciones, ciudades, países, organismos e instituciones. Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula)
-* **Todos los strings**: Incluyendo todos los strings que no sean números ni fechas.
+* **Nombres propios:** Aplicar siempre a nombres propios de personas. En el caso de direcciones, ciudades, países, organismos e instituciones debe aplicarse con mucha cautela, existen casos donde esta regla de limpieza hace más mal que bien (ej.: las instituciones pueden tener siglas, que no corresponde capitalizar). 
+    - Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula)
+* **Todos los strings**: Incluyendo todos los strings que no sean números ni fechas. En general se puede aplicar en forma segura a todos los strings, pero debe aplicarse con cautela en el caso de que haya muchos strings muy mal escritos (puede predominar el count de las peores versiones por sobre las mejores de un mismo cluster de strings).
     - Normalización con algoritmo de OpenRefine *Method: Key Collision / Keying function: fingerprint*. Se eligen todos los casos que marca el algoritmo por default.
 * **Strings separables en múltiples campos:** Se separan en múltiples campos todos aquellos strings que puedan ser separables *con relativa seguridad* creando campos nuevos, pero se mantiene el campo original presente en el dataset.
     - Split simple con OpenRefine: Se identifica el separador y se crean nuevos campos a partir de un split.
