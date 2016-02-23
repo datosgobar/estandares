@@ -29,26 +29,47 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
  * Fecha y Hora: **YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM]**
  * Duracion: **YYYY-MM-DDTHH:MM:SS[.mmmmmm]**
 * Rangos horarios recurrentes:
- * Se aceptaran los siguientes formatos:
+ * Los rangos estaran divididos en dos partes separadas por un doble guion bajo "__", la 1ra indica el dia y otra la hora.
+ * Se puede omitir la parte del dia o bien de la hora pero nunca ambas
+ * Si se omite la parte que indica el dia se asumira que el rango abarca todo el horario indicado
+ * Si se omite la parte que indica el horario se asumira que el rango abarca todo el dia indicado
+ * El dia se puede indicar tanto mediante rangos separando los dias con guines medios "-" o bien como particulares con el guion bajo "_".
+ * Ejemplos de formatos validos para dias:
   ``` 
-  Se usara el formato HH:MM-HH:MM para indicar un rango que ocurre todos los dias.
-  Se usara el formato DAY para indicar que el rango ocupa todo el dia DAY.
-  Se usara el formato DAY_HH:MM-HH:MM para indicar un rango que ocurre los dias DAY entre HH:MM y HH:MM.
-  Se usara el formato DAY_HH:MM-HH:MM_HH:MM-HH:MM para indicar mas un rango horario en el mismo dia
-  Se usara el formato DAY1-DAY2_HH:MM-HH:MM para indicar un rango que ocurre los dias DAY1 a DAY2 entre HH:MM y HH:MM
-  Se usara el formato DAY1-DAY2_HH:MM-HH:MM_HH:MM-HH:MM para indicar mas un rango horario en el mismo rango de dias 
-  En caso de que se necesite cubrir mas de una franja horaria se incluiran varios rangos separados por espacios.
+  DAY : Un solo dia
+  DAY1-DAY2 : Entre entre DAY1 y DAY2
+  DAY1_DAY2 : DAY1 y DAY2
+  DAY1-DAY2_DAY3 : DAY1 a DAY2 y DAY3
+  ``` 
+ * La hora se indica mediante rangos separando los horarios con guines medios "-". Tambien se pueden indicar varios horarios con el guion bajo "_".
+ * Ejemplos de formatos validos para horas:
+  ``` 
+  HH:MM-HH:MM : Rango simple
+  HH:MM-HH:MM_HH:MM-HH:MM : Dos rangos
+  ``` 
+ * Mas ejemplos de formatos validos completos:
+  ``` 
+  HH:MM-HH:MM para indicar un rango que ocurre todos los dias.
+  DAY para indicar que el rango ocupa todo el dia DAY.
+  DAY__HH:MM-HH:MM para indicar un rango que ocurre los dias DAY entre HH:MM y HH:MM.
+  DAY__HH:MM-HH:MM_HH:MM-HH:MM para indicar mas un rango horario en el mismo dia
+  DAY1-DAY2__HH:MM-HH:MM para indicar un rango que ocurre los dias DAY1 a DAY2 entre HH:MM y HH:MM
+  DAY1-DAY2__HH:MM-HH:MM_HH:MM-HH:MM para indicar mas un rango horario en el mismo rango de dias 
   ```
+ * En caso de que se necesite cubrir mas de una franja horaria y esta sintaxis sea insuficiente se pueden incluir varias separadas por espacios.
  * Los dias se indicaran con sus iniciales en castellano: LUN, MAR, MIE, JUE, VIE, SAB y DOM
  * Ejemplos:
   ```
   24hs -> "00:00-23:59" 
   Jueves 24hs -> "JUE" 
-  Jueves de 14:30 a 17 hs -> "JUE_14:30-17:00" 
-  Jueves de 8 a 12 hs y de 16 a 20 hs -> "JUE_14:30-17:00_16:00-20:00" 
-  Jueves de 8 a 15 hs y Viernes de 8 a 15 hs -> "JUE_08:00-15:00 VIE_08:00-15:00" 
-  Lunes a Viernes 7:30 a 17 hs y Sábados 8 a 12 hs -> "LUN-VIE_07:30-17:00 SAB_08:00-12:00" 
-  Lunes a Viernes 8 a 11 y 14 a 18 hs -> "LUN-VIE_08:00-11:00_14:00-18:00" 
+  Jueves de 14:30 a 17 hs -> "JUE__14:30-17:00" 
+  Jueves de 8 a 12 hs y de 16 a 20 hs -> "JUE__08:12-17:00_16:00-20:00" 
+  Jueves de 8 a 15 hs y Viernes de 8 a 15 hs -> "JUE__08:00-15:00 VIE_08:00-15:00" 
+  Lunes a Viernes 7:30 a 17 hs y Sábados 8 a 12 hs -> "LUN-VIE__07:30-17:00 SAB__08:00-12:00" 
+  Lunes a Viernes 8 a 11 y 14 a 18 hs -> "LUN-VIE__08:00-11:00_14:00-18:00" 
+  Lunes y Miercoles 8 a 11 y 14 a 18 hs -> "LUN_MIE__08:00-11:00_14:00-18:00" 
+  Lunes a Miercoles y Viernes 8 a 11 y 14 a 18 hs -> "LUN-MIE_VIE__08:00-11:00_14:00-18:00"
+  Lunes a Miercoles 8 a 11 y de Viernes a Domingo 9 a 10 -> "LUN-MIE__08:00-11:00 VIE-DOM__09:00-10:00"
   ```
 * Numeros: De acuerdo con lo definido por la W3C \[2\] se tendra en cuenta lo siguiente:
  * El separador decimal debe ser el caracter "."
