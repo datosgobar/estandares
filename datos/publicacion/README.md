@@ -63,6 +63,7 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
 
 
 Referencias:
+
 \[1\]: http://tools.ietf.org/html/rfc4180 
 
 \[2\]: https://www.w3.org/TR/tabular-data-model/ 
