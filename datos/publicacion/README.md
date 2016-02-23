@@ -38,6 +38,8 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
 * Informacion geografica embebida **TODO: Elegir preferido**
  * GeoJSON
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
+ * WKB: Version binaria de WKT
+
 
 Referencias:
 \[1\]: http://tools.ietf.org/html/rfc4180 
