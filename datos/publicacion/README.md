@@ -28,6 +28,7 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
  * Hora: **HH:MM:SS[.mmmmmm][+HH:MM]**
  * Fecha y Hora: **YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM]**
  * Duracion: **YYYY-MM-DDTHH:MM:SS[.mmmmmm]**
+* Horarios de apertura de locales: **TODO**
 * Numeros: De acuerdo con lo definido por la W3C \[2\] se tendra en cuenta lo siguiente:
  * El separador decimal debe ser el caracter "."
  * Se admiten los siguientes valores especiales:
@@ -49,6 +50,17 @@ Referencias:
 Se recomienda el uso de alguna herramienta como csvlint para asegurarse que el formato del CSV es correcto y eliminar los errores obvios:
 * http://csvlint.io/ 
 * https://github.com/theodi/csvlint 
+
+#### Tabular Data Package (a considerar)
+Es un estandar para facilitar la publicacion y consumo de datos tabulares.
+Consiste en agregar un datapackage.json al dataset con los CSVs con la metadata correspondiente.
+
+CKAN dispone de herramientas para manejar este tipo de paquetes:
+http://ckan.org/2014/06/09/the-open-knowledge-data-packager/
+
+Ref:
+http://data.okfn.org/doc/tabular-data-package
+http://dataprotocols.org/data-packages/
 
 ### Informacion Geografica
 #### Formatos utilizados comunmente
