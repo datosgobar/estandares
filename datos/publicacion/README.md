@@ -56,7 +56,7 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   * NaN: Indica que el valor no es un numero valido.
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
  * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
-* Informacion geografica embebida **TODO: Elegir preferido**
+* Informacion geografica embebida **TODO: Encontrar una herramientas para pasar de un formato a otro facilmente**
  * GeoJSON
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
  * WKB: Version binaria de WKT
@@ -102,7 +102,7 @@ http://dataprotocols.org/data-packages/
 
 De momento los formatos mas utilizados son SHP, KML y GeoJSON. 
 
-**TODO: Encontrar una herramientas para converirlos a los demas formatos facilmente**
+**TODO: Encontrar una herramientas para pasar de un formato a otro facilmente**
 
 #### Sistemas de referencia
 El marco de referencia mas utilizado es WGS84 (EPSG 4326) con la proyeccion mercador Mercator (EPSG 3857).
