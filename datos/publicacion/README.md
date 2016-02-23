@@ -66,7 +66,7 @@ http://dataprotocols.org/data-packages/
 
 ### Informacion Geografica
 #### Formatos utilizados comunmente
-**TODO: Elegir preferido**
+
 * SHP: Es una especificacion abierta definida y manejada por la empresa Esri (los de ArcGIS).
  * https://en.wikipedia.org/wiki/Shapefile
 * KML: Formato abierto de informacion geografica definido utilizando por Google
@@ -75,6 +75,13 @@ http://dataprotocols.org/data-packages/
  * http://geojson.org/
 * TopoJSON: Extension de GeoJSON para manejar informacion topografica de manera compacta.
  * https://github.com/mbostock/topojson/wiki
+* GML: Estandar del Open Geospatial Consortium normalizado en el estandar ISO 19136:2007.
+ * http://www.opengeospatial.org/standards/gml
+ * http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554
+
+De momento los formatos mas utilizados son SHP, KML y GeoJSON. 
+
+**TODO: Encontrar una herramientas para converirlos a los demas formatos facilmente**
 
 #### Sistemas de referencia
 El marco de referencia mas utilizado es WGS84 (EPSG 4326) con la proyeccion mercador Mercator (EPSG 3857).
