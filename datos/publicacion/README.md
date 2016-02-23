@@ -34,6 +34,9 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   * NaN: Indica que el valor no es un numero valido.
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
  * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
+* Informacion geografica embebida **TODO: Elegir preferido**
+ * GeoJSON
+ * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
 
 Referencias:
 \[1\]: http://tools.ietf.org/html/rfc4180 
@@ -46,4 +49,26 @@ Referencias:
 Se recomienda el uso de alguna herramienta como csvlint para asegurarse que el formato del CSV es correcto y eliminar los errores obvios:
 * http://csvlint.io/ 
 * https://github.com/theodi/csvlint 
+
+### Informacion Geografica
+#### Formatos utilizados comunmente
+**TODO: Elegir preferido**
+* SHP: Es una especificacion abierta definida y manejada por la empresa Esri (los de ArcGIS).
+ * https://en.wikipedia.org/wiki/Shapefile
+* KML: Formato abierto de informacion geografica definido utilizando por Google
+ * http://www.opengeospatial.org/standards/kml
+* GeoJSON: Formato JSON simple para especificar informacion geografica.
+ * http://geojson.org/
+* TopoJSON: Extension de GeoJSON para manejar informacion topografica de manera compacta.
+ * https://github.com/mbostock/topojson/wiki
+
+#### Sistemas de referencia
+El marco de referencia mas utilizado es WGS84 (EPSG 4326) con la proyeccion mercador Mercator (EPSG 3857).
+
+El Instituto Geografico Nacional utiliza el Sistema de Referencia WGS 84 y el Marco de Referencia POSGAR 07 para los datos que libera.
+* http://www.ign.gob.ar/sig
+
+#### Validacion de archivos GeoJSON
+Se recomienda utilizar alguna herramienta como la siguiente para asegurarse de que el formato del archivo GeoJSON se correcto
+* http://geojsonlint.com/
 
