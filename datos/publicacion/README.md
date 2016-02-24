@@ -77,7 +77,7 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   * NaN: Indica que el valor no es un numero valido.
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
  * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
-* Informacion geografica embebida **TODO: Encontrar una herramientas para pasar de un formato a otro facilmente**
+* Informacion geografica embebida
  * GeoJSON
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
  * WKB: Version binaria de WKT
@@ -98,7 +98,7 @@ Se recomienda el uso de alguna herramienta como csvlint para asegurarse que el f
 
 #### Tabular Data Package (a considerar)
 Es un estandar para facilitar la publicacion y consumo de datos tabulares.
-Consiste en agregar un datapackage.json al dataset con los CSVs con la metadata correspondiente.
+Consiste en agregar un archivo ```datapackage.json``` al dataset con los CSVs con la metadata correspondiente.
 
 CKAN dispone de herramientas para manejar este tipo de paquetes:
 http://ckan.org/2014/06/09/the-open-knowledge-data-packager/
@@ -124,7 +124,19 @@ http://dataprotocols.org/data-packages/
 
 De momento los formatos mas utilizados son SHP, KML y GeoJSON. 
 
-**TODO: Encontrar una herramientas para pasar de un formato a otro facilmente**
+#### Conversion entre formatos
+* ogr2ogr: Soporta varios formatos
+  * www.gdal.org/ogr2ogr.html
+* WKT->GeoJSON
+  * https://github.com/mapbox/wellknown
+* WKT->GeoJSON (Shapely)
+  * http://lists.geojson.org/pipermail/geojson-geojson.org/2008-August/000459.html
+* GeoJSON -> SHP
+  * http://ben.balter.com/2013/06/26/how-to-convert-shapefiles-to-geojson-for-use-on-github/
+* Varias
+  * https://ogre.adc4gis.com/
+  * http://gis.stackexchange.com/questions/68175/geojson-to-esri-shapefile-using-ogr2ogr
+
 
 #### Sistemas de referencia
 El marco de referencia mas utilizado es WGS84 (EPSG 4326) con la proyeccion mercador Mercator (EPSG 3857).
