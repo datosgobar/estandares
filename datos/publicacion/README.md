@@ -148,3 +148,12 @@ El Instituto Geografico Nacional utiliza el Sistema de Referencia WGS 84 y el Ma
 Se recomienda utilizar alguna herramienta como la siguiente para asegurarse de que el formato del archivo GeoJSON se correcto
 * http://geojsonlint.com/
 
+
+### Estándares para fines especificos
+* Open Budget
+  * https://github.com/open-data-standards/data-schemas/blob/gh-pages/schemas/Open_Budget.md
+* Building & Land Development Specification
+  * http://permitdata.org/
+  * https://github.com/open-data-standards/permitdata.org/wiki
+* Varias
+  * https://www.codeforamerica.org/our-work/data-formats/
