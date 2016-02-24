@@ -78,9 +78,10 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
  * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
 * Informacion geografica embebida
- * GeoJSON
+ * GeoJSON: Tiene la ventaja de que es facil de utilizar consumir.
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
- * WKB: Version binaria de WKT
+ * WKB: Version binaria de WKT. Mucho mas compacto
+ * El formato GeoJSON es el preferido. En la medida de lo razonable convendria incluir ademas una columna con los mismos datos en formato WKT y WKB.
 
 
 Referencias:
@@ -114,7 +115,7 @@ http://dataprotocols.org/data-packages/
  * https://en.wikipedia.org/wiki/Shapefile
 * KML: Formato abierto de informacion geografica definido utilizando por Google
  * http://www.opengeospatial.org/standards/kml
-* GeoJSON: Formato JSON simple para especificar informacion geografica.
+* GeoJSON: Formato JSON simple para especificar informacion geografica facilmente consumible.
  * http://geojson.org/
 * TopoJSON: Extension de GeoJSON para manejar informacion topografica de manera compacta.
  * https://github.com/mbostock/topojson/wiki
@@ -122,14 +123,14 @@ http://dataprotocols.org/data-packages/
  * http://www.opengeospatial.org/standards/gml
  * http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554
 
-De momento los formatos mas utilizados son SHP, KML y GeoJSON. 
+De momento los formatos mas utilizados son SHP, KML y GeoJSON. En la medida de lo posible es preferible ofrecer los datos en estos tres formatos.
 
 #### Conversion entre formatos
 * ogr2ogr: Soporta varios formatos
   * www.gdal.org/ogr2ogr.html
-* WKT->GeoJSON
+* WKT -> GeoJSON
   * https://github.com/mapbox/wellknown
-* WKT->GeoJSON (Shapely)
+* WKT -> GeoJSON (Shapely)
   * http://lists.geojson.org/pipermail/geojson-geojson.org/2008-August/000459.html
 * GeoJSON -> SHP
   * http://ben.balter.com/2013/06/26/how-to-convert-shapefiles-to-geojson-for-use-on-github/
