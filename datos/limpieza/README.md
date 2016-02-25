@@ -41,6 +41,7 @@ En las siguientes subsecciones se estipulan procedimientos de limpieza estándar
 Involucra tareas de limpieza locales, que no requieren de servicios externos al dataset ni uso de otros datasets.
 
 * **Nombres propios:** Incluyendo nombres de personas, direcciones, ciudades, países, organismos e instituciones. Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula)
+* **E-mails:** Los e-mails se escriben en minúsculas (pasar todos a lowercase)
 * **Todos los strings**: Incluyendo todos los strings que no sean números ni fechas.
     - Normalización con algoritmo de OpenRefine *Method: Key Collision / Keying function: fingerprint*. Se eligen todos los casos que marca el algoritmo por default.
 * **Strings separables en múltiples campos:** Se separan en múltiples campos todos aquellos strings que puedan ser separables *con relativa seguridad* creando campos nuevos, pero se mantiene el campo original presente en el dataset.
