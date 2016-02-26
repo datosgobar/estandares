@@ -78,7 +78,7 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
  * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
 * Informacion geografica simple
- * Si el dato que se quiere incluir es solo un punto indicado por su latitud y longitud se recomienda crear dos columnas "lat" y "long" para dicho fin en lugar de utilizar un solo campo.
+ * Si el dato que se quiere incluir es solo un punto indicado por su latitud y longitud se recomienda crear dos columnas "lat" y "lon" para dicho fin en lugar de utilizar un solo campo.
 * Informacion geografica embebida
  * GeoJSON: Tiene la ventaja de que es facil de utilizar consumir.
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
