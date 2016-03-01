@@ -17,6 +17,7 @@ col1,col2,col3,
 a,,b 
 a,"",b 
 En la primera linea el valor de la columna col2 es indefinido; en cambio en la segunda, se considera una string vacia. 
+
 #### Sobre los Campos.
 
 Los campos deben ser lo más atómico posible. Se debe evitar definir campos que contengan más de un tipo de información (por ejemplo: e-mail y sitio web).
