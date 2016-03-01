@@ -1,61 +1,16 @@
 Limpieza de Datos
 ===
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+## Campos
 
-- [Estándares](#est%C3%A1ndares)
-  - [Nombres de los campos](#nombres-de-los-campos)
-  - [Fechas y horas](#fechas-y-horas)
-  - [Limpieza básica de strings](#limpieza-b%C3%A1sica-de-strings)
-  - [Limpieza avanzada de strings](#limpieza-avanzada-de-strings)
-- [Herramientas](#herramientas)
+1. Se separan en múltiples campos todos aquellos strings que puedan ser separables *con relativa seguridad* creando campos nuevos, pero se mantiene el campo original presente en el dataset.
+    - Split simple: Se identifica el separador y se crean nuevos campos a partir de un split.
+    - Split en base a Expresiones Regulares o Parsing Expression Grammars. 
+   
+## Valores de texto (strings)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+1. Se ponen en mayúscula todos los comienzos de palabra
+2. Se vuelven a minúscula las preposiciones
+3. Se identifican las siglas (con una búsqueda en un repositorio de siglas) y se las coloca todas en MAYÚSCULAS.
+4. Se normaliza las cadenas con algoritmo de *Key Collision / Keying function: fingerprint*. Se eligen todos los casos que marca el algoritmo por default.
 
-## Estándares
-
-En las siguientes subsecciones se estipulan procedimientos de limpieza estándar que se aplican a todos los datasets.
-
-### Nombres de los campos
-
-* Los nombres de los campos deben renombrarse según la siguiente convención: palabras en minúsculas unidas por un guión bajo, utilizando únicamente caracteres ASCII **a-z** y **0-9** (Ej.: *fecha_audiencia_solicitada*)
-
-### Fechas y horas
-
-* Los campos que expresen "fechas" y "horas" se convierten al estándar ISO 8601 (**YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM]**)
-    - Ej.: **2016-02-05T14:53:00-03:00**
-* Si no hay datos de hora o de día, se mantiene la primera parte del estándar
-    - Ej.: **2016-02-05**
-    - Ej.: **2016-02**
-* Si los campos de "fecha" y "hora" están separados, se mantienen los campos originales y se agrega el estandarizado.
-* Si se trata de un único campo, se elimina y se reemplaza por el campo estandarizado.
-* Los campos estandarizados se nombrarán de la siguiente manera:
-    - *isodate_nombre_campo*: Para fechas sin hora.
-    - *isodatetime_nombre_campo*: Para fechas que incluyen hora.
-* En el caso menos probable de que se disponga de una "hora" pero no de una "fecha", se convierte al formato **HH:MM:SS**. No es necesario cambiar el nombre del campo en este caso.
-
-### Limpieza básica de strings
-
-Involucra tareas de limpieza locales, que no requieren de servicios externos al dataset ni uso de otros datasets.
-
-* **Nombres propios:** Aplicar siempre a nombres propios de personas. En el caso de direcciones, ciudades, países, organismos e instituciones debe aplicarse con mucha cautela, existen casos donde esta regla de limpieza hace más mal que bien (ej.: las instituciones pueden tener siglas, que no corresponde capitalizar). 
-    - Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula)
-* **Todos los strings**: Incluyendo todos los strings que no sean números ni fechas. En general se puede aplicar en forma segura a todos los strings, pero debe aplicarse con cautela en el caso de que haya muchos strings muy mal escritos (puede predominar el count de las peores versiones por sobre las mejores de un mismo cluster de strings).
-    - Normalización con algoritmo de OpenRefine *Method: Key Collision / Keying function: fingerprint*. Se eligen todos los casos que marca el algoritmo por default.
-* **Strings separables en múltiples campos:** Se separan en múltiples campos todos aquellos strings que puedan ser separables *con relativa seguridad* creando campos nuevos, pero se mantiene el campo original presente en el dataset.
-    - Split simple con OpenRefine: Se identifica el separador y se crean nuevos campos a partir de un split.
-    - Expresiones Regulares o Parsing Expression Grammars. Si la expresión regular es sencilla, se puede hacer en OpenRefine. Si no lo es, o se vuelve conveniente usar PEGs, se escribe un módulo ad-hoc en python para estos casos.
-
-### Limpieza avanzada de strings
-
-Involucra tareas de limpieza que requieren del uso de servicios externos al dataset o de los datos de otros datasets.
-
-* **Normalización de campos geográficos**: (TODO)
-* **Normalización de nombres de personas**: (TODO)
-* **Normalización de nombres de instituciones**: (TODO)
-
-## Herramientas
-
-[TODO]

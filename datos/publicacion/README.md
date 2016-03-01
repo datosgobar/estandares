@@ -11,25 +11,33 @@ Se usar archivos CSV con las siguientes caracteristicas:
 * Todos los datasets se publican en el charset UTF-8 segun \[2\]
 * Se deben usar saltos de linea **CR-LF (\r\n)** siguiendo lo indicado por el RFC4180 \[1\] y \[2\]
 * No se admiten nombre de columnas duplicados.
-* No se admiten nombre de columnas duplicados.
-* Se considera valido para todos los tipos de dato que el valor indefinido.
+* Se considera válido, para todos los tipos de dato, el valor indefinido.
 Ej: 
 col1,col2,col3, 
 a,,b 
 a,"",b 
-En la primera linea el valor de la columna col2 es indefinido en tanto que en la segunda se considera una string vacia. 
+En la primera linea el valor de la columna col2 es indefinido; en cambio en la segunda, se considera una string vacia. 
+#### Sobre los Campos.
 
-* Formato de tipos de datos (basado en la especificacion de la W3C \[2\]): 
- * Boolean: A menos que se indique lo contrario se identificaran con los valores **true o false**. 
-Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posiblidad de que haya otro posible valor significa que se eligio un tipo de dato incorrecto. 
-* Strings: Segun el RFC 4180 las strings pueden o no estar entre comillas dobles pero seria recomendable que en todo caso lo esten para separar el caso de las strings vacias y los valores indefinidos. 
-* Tiempo: Se usara el estandar **ISO 8601 (YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM])** \[3\]. A menos que se indique lo contrario se asumira la que la zona horaria es UTC-03:00 (Argentina).
+Los campos deben ser lo más atómico posible. Se debe evitar definir campos que contengan más de un tipo de información (por ejemplo: e-mail y sitio web).
+
+Los nombres de los campos deben respetar la siguiente convención: palabras en minúsculas unidas por un guión bajo, utilizando únicamente caracteres ASCII **a-z** y **0-9** (Ej.: *fecha_audiencia_solicitada*)
+
+
+#### Sobre los datos
+El formato de tipos de datos está basado en la especificacion de la W3C \[2\]: 
+
+* *Strings:* Segun el RFC 4180 las strings pueden o no estar entre comillas dobles pero seria recomendable que en todo caso lo esten para separar el caso de las strings vacias y los valores indefinidos. 
+	* *Nombres propios:* Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula) todas las palabras excepto las preposiciones, que van en minúscula, y las siglas.
+	* *Siglas:* Van todas en mayúscula sin puntos. 
+	* Las entidades mencionadas deben tener una descripción única. Es decir que toda mención que se realice a un dado ente debe hacerse utilizando **exactamente la misma cadena de caracteres**
+* *Tiempo:* Se usará el estandar **ISO 8601 (YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM])** \[3\]. A menos que se indique lo contrario se asumirá que la zona horaria es UTC-03:00 (Argentina).
  * Fecha: **YYYY-MM-DD**
  * Hora: **HH:MM:SS[.mmmmmm][+HH:MM]**
  * Fecha y Hora: **YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM]**
  * Duracion: **YYYY-MM-DDTHH:MM:SS[.mmmmmm]**
-* Rangos horarios recurrentes:
- * Los rangos estaran divididos en dos partes separadas por un doble guion bajo "__", la 1ra indica el dia y otra la hora.
+* *Rangos horarios recurrentes:*
+ * Los rangos estaran divididos en dos partes separadas por un doble guion bajo "__", la primera indica el dia y la segunda, la hora.
  * Se puede omitir la parte del dia o bien de la hora pero nunca ambas
  * Si se omite la parte que indica el dia se asumira que el rango abarca todo el horario indicado
  * Si se omite la parte que indica el horario se asumira que el rango abarca todo el dia indicado
@@ -41,13 +49,13 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   DAY1_DAY2 : DAY1 y DAY2
   DAY1-DAY2_DAY3 : DAY1 a DAY2 y DAY3
   ``` 
- * La hora se indica mediante rangos separando los horarios con guines medios "-". Tambien se pueden indicar varios horarios con el guion bajo "_".
- * Ejemplos de formatos validos para horas:
+ * La hora se indica mediante rangos separando los horarios con guines medios "-". También se pueden indicar varios horarios con el guión bajo "_".
+ * Ejemplos de formatos válidos para horas:
   ``` 
   HH:MM-HH:MM : Rango simple
   HH:MM-HH:MM_HH:MM-HH:MM : Dos rangos
   ``` 
- * Mas ejemplos de formatos validos completos:
+ * Más ejemplos de formatos válidos completos:
   ``` 
   HH:MM-HH:MM para indicar un rango que ocurre todos los dias.
   DAY para indicar que el rango ocupa todo el dia DAY.
@@ -56,8 +64,8 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   DAY1-DAY2__HH:MM-HH:MM para indicar un rango que ocurre los dias DAY1 a DAY2 entre HH:MM y HH:MM
   DAY1-DAY2__HH:MM-HH:MM_HH:MM-HH:MM para indicar mas un rango horario en el mismo rango de dias 
   ```
- * En caso de que se necesite cubrir mas de una franja horaria y esta sintaxis sea insuficiente se pueden incluir varias separadas por espacios.
- * Los dias se indicaran con sus iniciales en castellano: LUN, MAR, MIE, JUE, VIE, SAB y DOM
+ * En caso de que se necesite cubrir más de una franja horaria y esta sintaxis sea insuficiente, se pueden incluir varias separadas por espacios.
+ * Los días se indicarán con sus iniciales en castellano: LUN, MAR, MIE, JUE, VIE, SAB y DOM
  * Ejemplos:
   ```
   24hs -> "00:00-23:59" 
@@ -71,15 +79,19 @@ Tene en cuenta que este campo puede tener el valor indefinido. Si existe la posi
   Lunes a Miercoles y Viernes 8 a 11 y 14 a 18 hs -> "LUN-MIE_VIE__08:00-11:00_14:00-18:00"
   Lunes a Miercoles 8 a 11 y de Viernes a Domingo 9 a 10 -> "LUN-MIE__08:00-11:00 VIE-DOM__09:00-10:00"
   ```
-* Numeros: De acuerdo con lo definido por la W3C \[2\] se tendra en cuenta lo siguiente:
+* *Números:* De acuerdo con lo definido por la W3C \[2\] se tendrá en cuenta lo siguiente:
  * El separador decimal debe ser el caracter "."
  * Se admiten los siguientes valores especiales:
-  * NaN: Indica que el valor no es un numero valido.
+  * NaN: Indica que el valor no es un número válido.
   * INF y -INF: En caso de que el valor tienda a mas o menos infinito respectivamente.
- * Se recomienda consultar la especificacion original en caso de de dudas sobre casos particulares.
-* Informacion geografica simple
+ * Se recomienda consultar la especificación original en caso de de dudas sobre casos particulares.
+
+* *Boolean:* A menos que se indique lo contrario se identificaran con los valores **true o false**. Tener en cuenta que este campo puede tener el valor indefinido. Si existe la posiblidad de que haya otro valor significa que se eligio un tipo de dato incorrecto. 
+
+* *Información geografica simple*
  * Si el dato que se quiere incluir es solo un punto indicado por su latitud y longitud se recomienda crear dos columnas "lat" y "lon" para dicho fin en lugar de utilizar un solo campo.
-* Informacion geografica embebida
+ 
+* *Información geografica embebida*
  * GeoJSON: Tiene la ventaja de que es facil de utilizar consumir.
  * WKT: Lenguaje de mark-up para almacenar informacion geografica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
  * WKB: Version binaria de WKT. Mucho mas compacto
@@ -94,11 +106,12 @@ Referencias:
 
 \[3\]: https://en.wikipedia.org/wiki/ISO_8601 
 
-#### Validacion
+### Validación
 Se recomienda el uso de alguna herramienta como csvlint para asegurarse que el formato del CSV es correcto y eliminar los errores obvios:
 * http://csvlint.io/ 
 * https://github.com/theodi/csvlint 
 
+###LINKS Y REFERENCIAS QUE PUEDEN SER UTILES
 #### Tabular Data Package (a considerar)
 Es un estandar para facilitar la publicacion y consumo de datos tabulares.
 Consiste en agregar un archivo ```datapackage.json``` al dataset con los CSVs con la metadata correspondiente.
@@ -110,8 +123,8 @@ Ref:
 http://data.okfn.org/doc/tabular-data-package
 http://dataprotocols.org/data-packages/
 
-### Informacion Geografica
-#### Formatos utilizados comunmente
+#### Informacion Geografica
+##### Formatos utilizados comunmente
 
 * SHP: Es una especificacion abierta definida y manejada por la empresa Esri (los de ArcGIS).
  * https://en.wikipedia.org/wiki/Shapefile
@@ -127,7 +140,7 @@ http://dataprotocols.org/data-packages/
 
 De momento los formatos mas utilizados son SHP, KML y GeoJSON. En la medida de lo posible es preferible ofrecer los datos en estos tres formatos.
 
-#### Conversion entre formatos
+##### Conversion entre formatos
 * ogr2ogr: Soporta varios formatos
   * www.gdal.org/ogr2ogr.html
 * WKT -> GeoJSON
@@ -141,18 +154,18 @@ De momento los formatos mas utilizados son SHP, KML y GeoJSON. En la medida de l
   * http://gis.stackexchange.com/questions/68175/geojson-to-esri-shapefile-using-ogr2ogr
 
 
-#### Sistemas de referencia
+##### Sistemas de referencia
 El marco de referencia mas utilizado es WGS84 (EPSG 4326) con la proyeccion mercador Mercator (EPSG 3857).
 
 El Instituto Geografico Nacional utiliza el Sistema de Referencia WGS 84 y el Marco de Referencia POSGAR 07 para los datos que libera.
 * http://www.ign.gob.ar/sig
 
-#### Validacion de archivos GeoJSON
+##### Validacion de archivos GeoJSON
 Se recomienda utilizar alguna herramienta como la siguiente para asegurarse de que el formato del archivo GeoJSON se correcto
 * http://geojsonlint.com/
 
 
-### Estándares para fines especificos
+#### Estándares para fines especificos
 * Open Budget
   * https://github.com/open-data-standards/data-schemas/blob/gh-pages/schemas/Open_Budget.md
 * Building & Land Development Specification
@@ -160,3 +173,4 @@ Se recomienda utilizar alguna herramienta como la siguiente para asegurarse de q
   * https://github.com/open-data-standards/permitdata.org/wiki
 * Varias
   * https://www.codeforamerica.org/our-work/data-formats/
+
