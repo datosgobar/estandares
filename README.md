@@ -9,5 +9,5 @@ En este repositorio se documentan estándares a seguir por los equipos de la SSI
 * [Estándares de datos](datos)
     - [Estándares de extracción de datos](datos/extraccion) (TODO)
     - [Estándares de limpieza de datos](datos/limpieza)
-    - [Estándares de publicación de datos](datos/publicacion) (TODO)
+    - [Estándares de publicación de datos](datos/publicacion)
     - [Estándares de análisis de datos](datos/analisis) (TODO)
