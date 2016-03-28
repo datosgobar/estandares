@@ -1,26 +1,25 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contenido**
-
-- [Publicación de Datos](#publicaci%C3%B3n-de-datos)
-  - [Estándares](#est%C3%A1ndares)
-    - [Informacion Tabular](#informacion-tabular)
-      - [Sobre los Campos.](#sobre-los-campos)
-      - [Sobre los datos](#sobre-los-datos)
-    - [Validación](#validaci%C3%B3n)
-    - [LINKS Y REFERENCIAS QUE PUEDEN SER UTILES](#links-y-referencias-que-pueden-ser-utiles)
-      - [Tabular Data Package (a considerar)](#tabular-data-package-a-considerar)
-      - [Informacion Geografica](#informacion-geografica)
-        - [Formatos utilizados comunmente](#formatos-utilizados-comunmente)
-        - [Conversion entre formatos](#conversion-entre-formatos)
-        - [Sistemas de referencia](#sistemas-de-referencia)
-        - [Validacion de archivos GeoJSON](#validacion-de-archivos-geojson)
-      - [Estándares para fines especificos](#est%C3%A1ndares-para-fines-especificos)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 Publicación de Datos
 ===
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Estándares](#est%C3%A1ndares)
+  - [Informacion Tabular](#informacion-tabular)
+    - [Sobre los Campos.](#sobre-los-campos)
+    - [Sobre los datos](#sobre-los-datos)
+  - [Validación](#validaci%C3%B3n)
+  - [LINKS Y REFERENCIAS QUE PUEDEN SER UTILES](#links-y-referencias-que-pueden-ser-utiles)
+    - [Tabular Data Package (a considerar)](#tabular-data-package-a-considerar)
+    - [Informacion Geografica](#informacion-geografica)
+      - [Formatos utilizados comunmente](#formatos-utilizados-comunmente)
+      - [Conversion entre formatos](#conversion-entre-formatos)
+      - [Sistemas de referencia](#sistemas-de-referencia)
+      - [Validacion de archivos GeoJSON](#validacion-de-archivos-geojson)
+    - [Estándares para fines especificos](#est%C3%A1ndares-para-fines-especificos)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Estándares
 
