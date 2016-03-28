@@ -25,11 +25,11 @@ Publicación de Datos
 
 En las siguientes subsecciones se estipulan procedimientos de publicación estándar que se aplican a todos los datasets.
 
-### Informacion Tabular
-Se usar archivos CSV con las siguientes caracteristicas:
+### Información Tabular
+Se usan archivos CSV con las siguientes características:
 
-* Todos los datasets se publican en el charset UTF-8 segun \[2\]
-* Se deben usar saltos de linea **CR-LF (\r\n)** siguiendo lo indicado por el RFC4180 \[1\] y \[2\]
+* Todos los datasets se publican en el charset UTF-8 según [2][2]
+* Se deben usar saltos de linea **CR-LF (\r\n)** siguiendo lo indicado por el RFC4180 [1][1] y [2][2]
 * No se admiten nombre de columnas duplicados.
 * Se considera válido, para todos los tipos de dato, el valor indefinido.
 Ej: 
@@ -46,13 +46,13 @@ Los nombres de los campos deben respetar la siguiente convención: palabras en m
 
 
 #### Sobre los datos
-El formato de tipos de datos está basado en la especificacion de la W3C \[2\]: 
+El formato de tipos de datos está basado en la especificacion de la W3C [2][2]: 
 
 * *Strings:* Segun el RFC 4180 las strings pueden o no estar entre comillas dobles pero seria recomendable que en todo caso lo esten para separar el caso de las strings vacias y los valores indefinidos. 
 	* *Nombres propios:* Se capitalizan (primera letra de cada palabra es mayúscula, el resto de las letras es minúscula) todas las palabras excepto las preposiciones, que van en minúscula, y las siglas.
 	* *Siglas:* Van todas en mayúscula sin puntos. 
 	* Las entidades mencionadas deben tener una descripción única. Es decir que toda mención que se realice a un dado ente debe hacerse utilizando **exactamente la misma cadena de caracteres**
-* *Tiempo:* Se usará el estandar **ISO 8601 (YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM])** \[3\]. A menos que se indique lo contrario se asumirá que la zona horaria es UTC-03:00 (Argentina).
+* *Tiempo:* Se usará el estandar **ISO 8601 (YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM])** [3][3]. A menos que se indique lo contrario se asumirá que la zona horaria es UTC-03:00 (Argentina).
  * Fecha: **YYYY-MM-DD**
  * Hora: **HH:MM:SS[.mmmmmm][+HH:MM]**
  * Fecha y Hora: **YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM]**
@@ -100,7 +100,7 @@ El formato de tipos de datos está basado en la especificacion de la W3C \[2\]:
   Lunes a Miercoles y Viernes 8 a 11 y 14 a 18 hs -> "LUN-MIE_VIE__08:00-11:00_14:00-18:00"
   Lunes a Miercoles 8 a 11 y de Viernes a Domingo 9 a 10 -> "LUN-MIE__08:00-11:00 VIE-DOM__09:00-10:00"
   ```
-* *Números:* De acuerdo con lo definido por la W3C \[2\] se tendrá en cuenta lo siguiente:
+* *Números:* De acuerdo con lo definido por la W3C [2][2] se tendrá en cuenta lo siguiente:
  * El separador decimal debe ser el caracter "."
  * Se admiten los siguientes valores especiales:
   * NaN: Indica que el valor no es un número válido.
@@ -121,11 +121,11 @@ El formato de tipos de datos está basado en la especificacion de la W3C \[2\]:
 
 Referencias:
 
-\[1\]: http://tools.ietf.org/html/rfc4180 
+[1]: http://tools.ietf.org/html/rfc4180 
 
-\[2\]: https://www.w3.org/TR/tabular-data-model/ 
+[2]: https://www.w3.org/TR/tabular-data-model/ 
 
-\[3\]: https://en.wikipedia.org/wiki/ISO_8601 
+[3]: https://en.wikipedia.org/wiki/ISO_8601 
 
 ### Validación
 Se recomienda el uso de alguna herramienta como csvlint para asegurarse que el formato del CSV es correcto y eliminar los errores obvios:
