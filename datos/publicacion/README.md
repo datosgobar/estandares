@@ -214,8 +214,19 @@ A continuación se muestran los ejemplos de [LineString](http://geojson.org/geoj
 
 **Ejemplos**:
 
-* *fecha_audiencia_solicitada*
-* *year_2016*
+    - *fecha_audiencia_solicitada*
+    - *year_2016*
+
+* Los campos que sean identificadores o códigos deberán incluir el sufijo "*_id*" mientras que los campos que contengan la descripción de ese identificador, deberán incluir el sufijo "*_desc*".
+
+**Ejemplo**:
+
+```
+sucursal_id,sucursal_desc
+1,Nueva Pompeya
+2,Barracas
+3,La Quiaca
+```
 
 ### Archivos
 (**TODO**)
