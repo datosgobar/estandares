@@ -148,6 +148,54 @@ Se usará el estandar [ISO 8601][ISO8601] **(YYYY-MM-DDTHH:MM:SS[.mmmmmm][+HH:MM
 * Tener en cuenta que este campo puede tener el valor **indefinido**.
 * Si existe la posiblidad de que haya otro valor que no es **true**, **false** o **indefinido** significa que se eligió un tipo de datos incorrecto: este no es booleano, el tipo de dato booleano es binario y sólo admite 2 valores de verdad (aparte del caso del valor indefinido).
 
+### Geográficos
+
+En este apartado sólo se cubren algunos casos en los que existen campos que representan datos geográficos pero que están en un archivo cuyo *formato no es propiamente geográfico* (Por ejemplo: un CSV con columnas **lat** y **lon**).
+
+Los formatos de archivos propiamente geográficos se cubren más adelante, en la sección [Formatos > Geográficos](#geograficos).
+
+#### Coordenadas de un punto (Point)
+
+Para el caso de un dataset que deba incluir datos sobre **coordenadas geográficas de puntos** y, por simplicidad o por cualquier otro motivo, se desee utilizar un formato de archivo no específicamente geográfico, se recomienda lo siguiente:
+
+* Crear dos columnas "**lat**" y "**lon**" donde se escribirán respectivamente los valores de "latitud" y "longitud".
+* Adoptar el sistema de coordenadas geográficas WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/wgs-84/)) y el sistema de coordenadas proyectadas Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)).
+
+#### Coordenadas de formas (LineString, MultiLineString, Polygon, MultiPolygon, etc)
+
+Para representar formas de mayor dimensionalidad que un punto en un archivo de formato no específicamente geográfico, se recomienda el uso de strings [GeoJSON](http://geojson.org/geojson-spec.html#appendix-a-geometry-examples).
+
+Un string GeoJSON es un valor de texto que puede estar contenido en un archivo de texto plano como un CSV, y que define una forma de escribir conjuntos de coordenadas que representan una forma geométrica de 0 o más dimensiones.
+
+Es importante no confundir esto con el archivo de formato específicamente geográfico de formato **GeoJSON** cuya extensión es **.geojson** y es caso particular del formato general de intercambio de datos **JSON** cuya extensión es **.json**. En cierta manera, el uso de strings GeoJSON en archivos de formato no específicamente geográfico nace de la utilización parcial del estándar definido para los archivos GeoJSON.
+
+Convenciones a seguir:
+
+* Adoptar el sistema de coordenadas geográficas WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/wgs-84/)) y el sistema de coordenadas proyectadas Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)).
+* Cada posición en las listas de puntos de un string GeoJSON debe contener longitud primero y latitud después: ```[longitud, latitud]```
+
+A continuación se muestran los ejemplos de [LineString](http://geojson.org/geojson-spec.html#id3) y [Polygon](http://geojson.org/geojson-spec.html#id4). Para una referencia completa sobre cómo escribir las coordenadas de otros tipos de figuras geométricas véase la lista de [ejemplos de geometrías en GeoJSON](http://geojson.org/geojson-spec.html#appendix-a-geometry-examples).
+
+##### LineString
+
+```json
+{ "type": "LineString",
+  "coordinates": [ [-58.370877, -34.608192], [-58.373489, -34.608488] ]
+}
+```
+
+##### Polygon
+
+```json
+{
+    "type": "Polygon",
+    "coordinates": [
+      [ [-58.370877, -34.608192], [-58.373489, -34.608488],
+        [-58.372191, -34.608991], [-58.370877, -34.608192] ]
+    ]
+}
+```
+
 ## Nomenclatura
 ### Campos
 
@@ -213,26 +261,18 @@ col1,col2,col3\r\n
 a,,b\r\n
 a,"",b\r\n
 ```
+
 *En la primera línea el valor de la columna **col2** es indefinido, mientras que en la segunda línea se considera como un string vacío.*
 
 ### JSON
 (**TODO**)
 
 ## Geográficos
-(**TODO**)
-
-### Información geográfica simple
-
-* Si el dato que se quiere incluir es solo un punto indicado por su latitud y longitud se recomienda crear dos columnas "lat" y "lon" para dicho fin en lugar de utilizar un solo campo.
-
-### Información geográfica embebida
-
-* **GeoJSON**: Tiene la ventaja de que es fácil de utilizar o consumir.
-* **WKT**: Lenguaje de mark-up para almacenar información geográfica utilizado por PostGIS entre otros. Definido incialmente por el Open Geospatial Consortium y luego extendido por la norma ISO/IEC 13249-3:2011.
-* **WKB**: Versión binaria de WKT. Mucho más compacto.
-* El formato **GeoJSON** es el preferido. En la medida de lo razonable convendria incluir además una columna con los mismos datos en formato WKT y WKB.
 
 ### SHP
+(**TODO**)
+
+### GEOJSON
 (**TODO**)
 
 ## Estadísticos
