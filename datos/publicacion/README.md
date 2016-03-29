@@ -46,11 +46,11 @@ En esta sección se recomiendan estándares que aplican a una gran variedad de c
 
 ## Codificación
 
-* Todos los recursos de datos deben publicarse utilizando el charset **UTF-8** siguiendo las [recomendaciones de la W3C](https://www.w3.org/TR/tabular-data-model/#h-encoding).
+Todos los recursos de datos deben publicarse utilizando el charset **UTF-8** siguiendo las [recomendaciones de la W3C](https://www.w3.org/TR/tabular-data-model/#h-encoding).
 
 ## Tipo de Datos
 
-El formato recomendado de los distintos tipos de datos está basado en la especificación de la [W3C][W3C].
+El formato recomendado de los distintos tipos de datos está mayormente basado en la especificación de la [W3C][W3C].
 
 ### String
 
@@ -69,13 +69,11 @@ Capital Federal                   >>   Ciudad Autónoma de Buenos Aires
 Ciudad de Buenos Aires            >>   Ciudad Autónoma de Buenos Aires
 ```
 
-*En el ejemplo anterior, los 4 valores de texto refieren a la misma entidad. Debe elegirse una **única** forma de referirse a la misma y utilizarla en todos los casos.*
+*En el ejemplo anterior, los 4 valores de texto refieren a la misma entidad. Debe elegirse una única forma de referirse a la misma y utilizarla en todos los casos.*
 
-*En este caso se eligió la primera de ellas, siguiendo el criterio general, pero debería elegirse la **más adecuada** según el estándar establecido para ese tipo de entidad o el contexto del dataset de que se trate.*
+*En este caso se eligió la primera de ellas, siguiendo el criterio general, pero debería elegirse la más adecuada según el estándar establecido para ese tipo de entidad o el contexto del dataset de que se trate.*
 
 ### Número
-
-Se tendrán en cuenta las siguientes convenciones para tratar con números:
 
 * El separador decimal debe ser el caracter "**.**".
 * No se utilizará separador de *miles*.
@@ -185,15 +183,10 @@ Los archivos CSV son archivos de texto plano donde las columnas se separan por c
 Los estándares recomendados para la publicación de archivos CSV son:
 
 * Las filas deben finalizar con los caracteres de "retorno de carro" (\r) y "salto de línea" (\n) unidos (**\r\n**), siguiendo lo indicado por el RFC4180 [RFC4180][rfc4180] y [W3C][W3C]. Esta forma de separar las líneas se denomina usualmente **CRLF** ("Carriage Return Line Feed").
-
 * La **primera fila** siempre contiene los nombres de los campos.
-
 * No se deben **repetir nombres** entre los campos.
-
 * No se debe colocar **espacios** al principio o al final del nombre de un campo, o de un valor.
-
 * Tanto los campos como los valores deben estar **separados por comas** ("**,**").
-
 * En el caso de que un valor contenga el caracter separador ("**,**") o cualquiera de los caracteres que separan las líneas ("**\r**", "**\n**" o "**\r\n**"), el valor debe ser encerrado entre comillas dobles **""**. Esto indica que el caracter no cumple el rol de separar columnas o filas, sino que es parte de un valor.
 
 **Ejemplo**:
