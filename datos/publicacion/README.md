@@ -13,6 +13,9 @@ Publicación de Datos
     - [Número](#n%C3%BAmero)
     - [Tiempo](#tiempo)
     - [Booleano](#booleano)
+    - [Geográficos](#geogr%C3%A1ficos)
+      - [Coordenadas de un punto (Point)](#coordenadas-de-un-punto-point)
+      - [Coordenadas de formas (LineString, MultiLineString, Polygon, MultiPolygon, etc)](#coordenadas-de-formas-linestring-multilinestring-polygon-multipolygon-etc)
   - [Nomenclatura](#nomenclatura)
     - [Campos](#campos)
     - [Archivos](#archivos)
@@ -20,10 +23,9 @@ Publicación de Datos
   - [Genéricos](#gen%C3%A9ricos)
     - [CSV](#csv)
     - [JSON](#json)
-  - [Geográficos](#geogr%C3%A1ficos)
-    - [Información geográfica simple](#informaci%C3%B3n-geogr%C3%A1fica-simple)
-    - [Información geográfica embebida](#informaci%C3%B3n-geogr%C3%A1fica-embebida)
+  - [Geográficos](#geogr%C3%A1ficos-1)
     - [SHP](#shp)
+    - [GEOJSON](#geojson)
   - [Estadísticos](#estad%C3%ADsticos)
   - [Particulares](#particulares)
 
@@ -39,6 +41,8 @@ Publicación de Datos
 En este documento se estipulan estándares de publicación de recursos de datos. La definición de estos estándares es un *trabajo en progreso*, de manera que no deben considerarse como completos.
 
 Otros estándares pueden ser aplicables para casos no previstos en el documento y se alienta a los usuarios a abrir *issues* con sugerencias, dudas y comentarios que aporten a la discusión de los mismos.
+
+En el [Anexo 1: Herramientas y referencias](anexo1_herramientas_referencias.md) se consignan algunas herramientas útiles a la hora de cumplir con los estándares, convertir formatos, chequear la validez de un archivo, etc.
 
 # Aspectos Generales
 
