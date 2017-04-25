@@ -115,6 +115,32 @@ Para integrar un repositorio con Travis CI:
 
 * **Waffle.io para gestionar los issues** (completar con cómo integrar Waffle!!)
 
+## Jupyter
+
+* Estructura típica de un notebook
+    1. *Introducción / resumen de lo que se hace en el notebook*
+    2. Importar librerías
+    3. Extraer datos (E)
+    4. Transformar datos (T)
+    5. Análisis / modelado de los datos
+    6. Visualización
+    7. *Conclusiones / resumen de lo que se hace en el notebook*
+* Tamaño deseable (notebook)
+    - Para la mayoría de los casos un notebook debería tener **entre 4 y 10 celdas**
+    - Varios casos pueden justificar notebooks más largos (**>10 celdas**) con el objetivo de mantener una unidad temática
+    - Si un notebook es demasiado largo (**>30 celdas**) se recomienda partirlo en notebooks más pequeños
+* Numerar notebooks que deberían correrse secuencialmente la mayoría de las veces. Ej.:
+    - 1 - Preparación de los datos.ipynb
+    - 2 - Modelo lineal.ipynb
+    - 3 - Ensable.ipynb
+* No se recomienda "ocultar" modelos, rutinas de análisis o funcionalidades específicas al proyecto en módulos aparte (que impiden una lectura transparente del notebook)
+* Tamaño deseable (celda)
+    - Cada celda debería cumplir una sola tarea
+* Las celdas de un notebook deberían estar en el orden en el que se espera que sean ejecutadas
+* No mezclar código de prototipado junto con código de análisis
+* No dejar celdas con código para hacer debugging
+    - Para esto es más útil usar la consola integrada
+
 ## JavaScript
 (TODO)
 
