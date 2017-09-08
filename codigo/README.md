@@ -11,7 +11,7 @@ En este documento se fijan estándares mínimos para la producción de código y
 - [Style-Guide](#style-guide)
   - [Convenciones generales](#convenciones-generales)
   - [Python](#python)
-    - [Guía de estilo: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)](#gu%C3%ADa-de-estilo-google-python-style-guidehttpsgooglegithubiostyleguidepyguidehtml)
+    - [Guía de estilo: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
     - [Estructura de un proyecto en python](#estructura-de-un-proyecto-en-python)
       - [Templates](#templates)
       - [Convenciones](#convenciones)
@@ -35,7 +35,7 @@ En este documento se fijan estándares mínimos para la producción de código y
 
 ### Guía de estilo: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 * Todos los proyectos en python deben seguir la [guía de estilo de Google](https://google.github.io/styleguide/pyguide.html) para nombrar variables, nombrar métodos, documentar módulos, escribir docstrings, etc.
-* Ver [ejemplo completo](http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html#example-google) de un módulo en python según la guía de estilo de Google.
+* Ver [ejemplo completo](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html#example-google) de un módulo en python según la guía de estilo de Google.
 
 ### Estructura de un proyecto en python
 
@@ -62,8 +62,8 @@ En este documento se fijan estándares mínimos para la producción de código y
 
 * **setup.py**: la inclusión de un *setup.py* es opcional, pero recomendable para proyectos grandes/complejos. Permite instalar el proyecto en el *path* del entorno virtual utilizado y utilizar importaciones absolutas como cualquier otra librería descargada de **pip**.
     - El proyecto se instala en el entorno virtual con `pip install -e .` (modo edición, sin crear una distribución) para poder editarlo sin instalarlo nuevamente.
-    - Debe tenerse en cuenta que al agregar un paquete nuevo (una carpeta con un __init__.py en el interior) debe agregarse a la lista de la variable *packages* del *setup.py* y correr el comando de instalación nuevamente.
-    - Un proyecto simple puede omitir el *setup.py* y desarrollarse con importaciones relativas. Aunque esta decisión debe reveerse si el proyecto se torna complejo.
+    - Debe tenerse en cuenta que al agregar un paquete nuevo (una carpeta con un `__init__.py` en el interior) debe agregarse a la lista de la variable *packages* del *setup.py* y correr el comando de instalación nuevamente.
+    - Un proyecto simple puede omitir el *setup.py* y desarrollarse con importaciones relativas. Aunque esta decisión debe confrontarse si el proyecto se torna complejo.
 
 ### Linters en Sublime Text
 
@@ -99,7 +99,7 @@ Algunos aspectos de la estructuración de un repositorio pueden cambiar dependie
     - *Coveralls*: para controlar el % de cobertura de los tests del proyecto.
     - *Github*: para seguir los commits del equipo.
 
-* **README**: Donde se listan:
+* **README**: Donde se alistan:
     - El *objetivo* del proyecto
     - Un *ejemplo rápido* de uso
     - Las instrucciones de *instalación*
@@ -132,7 +132,7 @@ Para integrar un repositorio con Travis CI:
 * Numerar notebooks que deberían correrse secuencialmente la mayoría de las veces. Ej.:
     - 1 - Preparación de los datos.ipynb
     - 2 - Modelo lineal.ipynb
-    - 3 - Ensable.ipynb
+    - 3 - Ensamble.ipynb
 * No se recomienda "ocultar" modelos, rutinas de análisis o funcionalidades específicas al proyecto en módulos aparte (que impiden una lectura transparente del notebook)
 * Tamaño deseable (celda)
     - Cada celda debería cumplir una sola tarea
