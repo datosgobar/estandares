@@ -30,6 +30,7 @@ En este documento se fijan estándares mínimos para la producción de código y
 * Los **ipython notebooks** reúnen en un mismo documento código ejecutable y documentación. Debe preferirse el **inglés** para los bloques de código y el **español** para los bloques de documentación.
 * Los **commits** deben ser *chicos y fácilmente abordables por un tercero*. Debe buscarse avanzar en la producción de código de manera incremental.
 * En proyectos con 2 o más personas, el código nuevo debe trabajarse en una *branch* separada e incluirse en una *pull request* para ser revisado por un tercero antes de su incorporación definitiva al *master branch*.
+* Todos los proyectos de código que puedan ser dependencias de otros proyectos o productos que soportamos públicamente **deben tener una [estrategia de versionado semántico](https://semver.org/lang/es/)**.
 
 ## Python
 
